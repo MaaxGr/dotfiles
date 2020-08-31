@@ -1,12 +1,15 @@
-#! /bin/sh
+#!/bin/sh
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 
 sxhkd &
 
-if [[ $(hostname) == 'arch-desktop' ]]; then
-    xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 3840x472 --rotate normal --output DVI-I-1 --off --output DVI-I-0 --mode 1280x1024 --pos 0x624 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 1280x0 --rotate normal
-    bspc monitor DP-0 -d I II III IV
-    bspc monitor HDMI-0 -d V VI VII VIII
-    bspc monitor DVI-I-0 -d IX X
+if [[ $(hostname) == 'maxpc' ]]; then
+    xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --off --output DP-5 --off
+    bspc monitor HDMI-0 -d I II III IV
+    bspc monitor DP-3 -d V VI VII VIII
+
 elif [[ $(hostname) == 'arch' ]]; then
     xinput set-prop 11 304 1
     bspc monitor -d I II III IV V VI
@@ -34,7 +37,13 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Zathura -o state=tiled
 
 picom -Cb
+
+killall -q nm-applet
 nm-applet >/dev/null 2>&1 &
+
+killall -q pasystray
+pasystray &
+
 betterlockscreen -w
 bash $HOME/.config/polybar/launch.sh >/dev/null 2>&1 &
 clipit >/dev/null 2>&1 &

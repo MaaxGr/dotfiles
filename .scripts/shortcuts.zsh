@@ -34,3 +34,6 @@ setwall() {
     betterlockscreen -w
 }
 
+sshto() {
+  ssh "root@$1"
+}

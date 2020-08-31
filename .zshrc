@@ -21,7 +21,7 @@ export TYPEWRITTEN_CURSOR="beam"
 export TYPEWRITTEN_GIT_RELATIVE_PATH=true
 export TYPEWRITTEN_COLOR_MAPPINGS="primary:red;secondary:red;accent:white;foreground:white"
 
-if [ "$(hostname)" = "arch-thinkpad" ] || [ "$(hostname)" = "arch-desktop" ]; then
+if [ "$(hostname)" = "maxpc" ] || [ "$(hostname)" = "arch-desktop" ]; then
     export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
 else
     export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
@@ -44,7 +44,7 @@ antigen apply
 
 source ~/.scripts/aliases.zsh
 source ~/.scripts/shortcuts.zsh
+source ~/.scripts/ssh-agent.zsh
 
 export PATH=$PATH:~/.scripts
 export EDITOR=/usr/bin/vim
-

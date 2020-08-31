@@ -173,7 +173,6 @@ endif
 " Syntax, Linenumbers,...
 syntax on
 set ruler
-set number
 "set cursorline
 
 if &term =~ '256color'

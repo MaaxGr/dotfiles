@@ -7,8 +7,9 @@ super + Return
 	kitty
 
 # program launcher
-super + @space
+super + space
     rofi -combi-modi window,ssh,drun,emoji,calc -show combi
+
 
 super + p
     bwmenu --auto-lock -1
@@ -22,6 +23,7 @@ super + Escape
 #
 
 # quit bspwm normally
+# bspc wm -r
 super + alt + Escape
 	bspc quit
 
