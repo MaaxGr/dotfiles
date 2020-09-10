@@ -48,3 +48,9 @@ Dunst_path=".config/dunst"
 picom_description="Xorg compositor"
 picom_path=".config/picom"
 
+sources_description="Files that should be sourcd (e.g. aliases, and ssh-agent"
+sources_path=".sources"
+
+xprofile_description="xprofile"
+xprofile_path=".xprofile"
+

@@ -2,14 +2,20 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# init sxhkd
+SXHKD="$HOME/.config/sxhkd"
 
-sxhkd &
+if [[ $(hostname) == 'maxpc' ]]; then
+  sxhkd -c $SXHKD/apps.conf $SXHKD/media.conf $SXHKD/misc.conf $SXHKD/max-pc.conf &
+else
+  sxhkd -c $SXHKD/apps.conf $SXHKD/media.conf $SXHKD/misc.conf $SXHKD/max-notebook.conf &
+fi
 
+# init bspwm
 if [[ $(hostname) == 'maxpc' ]]; then
     xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --off --output DP-5 --off
     bspc monitor HDMI-0 -d I II III IV
     bspc monitor DP-3 -d V VI VII VIII
-
 elif [[ $(hostname) == 'arch' ]]; then
     xinput set-prop 11 304 1
     bspc monitor -d I II III IV V VI
@@ -35,6 +41,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=o
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura -o state=tiled
+
 
 picom -Cb
 

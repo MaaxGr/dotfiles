@@ -7,7 +7,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 PATH=$PATH:$USER_PATH/.cargo/bin
 PATH=$PATH:$USER_PATH/.gem/ruby/2.5.0/gems/colorls-1.1.1/exe
 
-
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_OPTS='
@@ -42,9 +41,10 @@ antigen bundle 'reobin/typewritten'
 antigen theme typewritten
 antigen apply
 
-source ~/.scripts/aliases.zsh
-source ~/.scripts/shortcuts.zsh
-source ~/.scripts/ssh-agent.zsh
+source ~/.sources/aliases.zsh
+source ~/.sources/shortcuts.zsh
+source ~/.sources/ssh-agent.zsh
 
 export PATH=$PATH:~/.scripts
 export EDITOR=/usr/bin/vim
+
