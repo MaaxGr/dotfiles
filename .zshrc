@@ -48,3 +48,4 @@ source ~/.sources/ssh-agent.zsh
 export PATH=$PATH:~/.scripts
 export EDITOR=/usr/bin/vim
 
+[[ -f ~/.rclocal ]] && source ~/.rclocal

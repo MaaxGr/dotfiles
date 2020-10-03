@@ -44,12 +44,15 @@ font-0 = Caskaydia Cove Nerd Font:style=Mono:size=6;3
 modules-left = bspwm title
 modules-center = 
 ;modules-right = player volume pacman aur wireless-network battery date
-modules-right = player volume pacman aur date separator
+modules-right = player volume pacman aur wireless-network battery clock separator
 
 [module/battery]
 type = internal/battery
 full-at = 98
 time-format = %H:%M
+
+battery = BAT1
+adapter = ACAD
 
 label-charging = %{F#41535b} |   %{F#cccccc}%percentage%% 
 ;(%time%)
@@ -79,12 +82,20 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
+[module/clock]
+type = custom/script
+exec = /usr/bin/date '+%a %e %b %H:%M'
+interval = 2
+label = %{F#41535b} |  %{F-} %output%
+click-left = /usr/bin/gsimplecal
+
 [module/date]
 type = internal/date
 ;date =   %%{F#999}%a %e %b%%{F-} %%{F#fff}%H:%M%%{F-}
 date = %a %e %b
 time = %H:%M
 label = %{F#41535b} |  %{F-} %date% %time%
+click-left = /usr/bin/gsimplecal
 
 [module/wireless-network]
 type = internal/network

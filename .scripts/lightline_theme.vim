@@ -64,5 +64,5 @@ let s:p.tabline.borderright = [ [ s:c00, s:bg ] ]
 
 
 
-let g:lightline#colorscheme#dark_qualitative#palette = lightline#colorscheme#flatten(s:p)
+"let g:lightline#colorscheme#dark_qualitative#palette = lightline#colorscheme#flatten(s:p)
 
