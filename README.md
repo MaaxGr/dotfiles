@@ -33,3 +33,10 @@ yay -S rofi-calc rofi-emoji
         Option "NaturalScrolling" "true"
     EndSection
     ```
+    
+## Sepcial env variables for kde applications
+
+```
+XDG_CURRENT_DESKTOP=KDE
+QT_QPA_PLATFORMTHEME=kde
+```
